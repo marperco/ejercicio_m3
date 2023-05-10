@@ -1,19 +1,10 @@
-# Lista de general de nombres
+# Lista general de nombres
 nombres = ["Harry Houdini", "Newton", "David Blaine", "Hawking", "Messi", "Teller", "Einstein", "Pele", "Juanes"]
+magos = ["Harry Houdini", "David Blaine", "Teller"]
+cientificos = ["Newton", "Hawking", "Einstein"]
 
-# Función original para separar los nombres en tres grupos
-def separar_nombres(nombres):
-    magos = []
-    cientificos = []
-    otros = []
-    for nombre in nombres:
-        if nombre in ["Harry Houdini", "David Blaine", "Teller"]:
-            magos.append(nombre)
-        elif nombre in ["Newton", "Hawking", "Einstein"]:
-            cientificos.append(nombre)
-        else:
-            otros.append(nombre)
-    return magos, cientificos, otros
+# Crear lista de "otros"
+otros = list(set(nombres) - set(magos) - set(cientificos))
 
 # Función para modificar la lista de magos, y hacerlos "grandes"
 def hacer_grandioso(magos):
@@ -25,14 +16,11 @@ def imprimir_nombres(nombres):
     for nombre in nombres:
         print(nombre)
 
-# Separamos los nombres en tres grupos
-magos, cientificos, otros = separar_nombres(nombres)
-
 # Imprimimos la lista completa de nombres
 print("Lista completa de nombres:")
 imprimir_nombres(nombres)
 print()
-
+# input()
 # Modificamos la lista de magos
 hacer_grandioso(magos)
 
@@ -49,3 +37,4 @@ print()
 # Imprimimos los nombres de los otros
 print("Otros:")
 imprimir_nombres(otros)
+print()
